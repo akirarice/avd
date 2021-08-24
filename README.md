@@ -108,11 +108,11 @@ start the daemon like this: `avdd 'weather-wttr dt' &`.
 
 Modules added by Akira
 ----------------------
-mpcd: tracks music changes via mpc idle
-pac:  tracks new package updates. Use a cron job to update db regularly
-mem: rewritten
-temp: rewritten
-vol-amixer: rewritten
+mpcd: tracks music changes via mpc idle 
+pac:  tracks new package updates. Use a cron job to update db regularly 
+mem: rewritten 
+temp: rewritten 
+vol-amixer: rewritten 
 
 ### Reserved Module Names
 
