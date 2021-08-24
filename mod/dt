@@ -2,7 +2,7 @@
 
 mod_dt () {
   # Customizable configuration constants
-  local -r DEFAULT_FMT='%a %d %I:%M%p'
+  local -r DEFAULT_FMT='%m/%d %R'
   local -r DEFAULT_PRE=''
   local -r DEFAULT_SUF=''
 

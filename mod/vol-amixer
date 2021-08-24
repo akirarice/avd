@@ -14,21 +14,14 @@ mod_vol_amixer () {
   local -r pre_mute="${3-${DEFAULT_PRE_MUTE}}"
   local -r suf="${4-${DEFAULT_SUF}}"
 
-  local pre info stat vol
+  local pre vol
 
-  info="$(amixer get Master | tail -n 1)"
-  stat="$(sed -E 's/.*\[(.*)\]/\1/' <<< "${info}")"
-  vol="$(sed -E 's/.*\[(.*)%\].*/\1/' <<< "${info}")"
+  vol="$(pamixer --get-volume)"
+  [ -z "$vol" ] && vol="20"
+  stat="$(pamixer --get-mute)"
 
-  case "${stat}" in
-    on)
-      if [[ "${vol}" -lt 50 ]]; then pre="${pre_low}";
-      else pre="${pre_hi}"; fi
-      ;;
-    *)
-      pre="${pre_mute}"
-      ;;
-  esac
+if [[ "${vol}" -lt 50 ]]; then pre="${pre_low}";
+else pre="${pre_hi}"; fi
   printf '%b%3d%b' "${pre}" "${vol}" "${suf}"
 }
 

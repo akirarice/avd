@@ -1,15 +1,7 @@
 #!/bin/bash
 
 mod_mem () {
-  # Customizable configuration constants
-  local -r DEFAULT_PRE=' '
-  local -r DEFAULT_SUF='%'
-
-  local -r pre="${1-${DEFAULT_PRE}}"
-  local -r suf="${2-${DEFAULT_SUF}}"
-
-  printf '%b' "${pre}"
-  free | awk 'NR == 2 {printf "%3.0f", $3 * 100 / $2}'
-  printf '%b' "${suf}"
+	#free --mebi | sed -n '2{p;q}' | awk '{printf (" %2.2f/%2.2fGB\n", ( $3 / 1024), ($2 / 1024))}'
+	free --mebi | sed -n '2{p;q}' | awk '{printf (" %2.2f GB", ( $3 / 1024))}'
 }
 
