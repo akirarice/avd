@@ -1,0 +1,9 @@
+#!/bin/sh
+mod_nb () {
+	! pidof -x newsboat && 
+		nb_unread="$(newsboat -x "print-unread" | cut -f2)" ||
+		nb_unread="n/a"
+	nb_unread="${nb_unread%% *}"
+	printf "%s" "$nb_unread"
+}
+

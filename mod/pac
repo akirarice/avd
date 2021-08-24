@@ -1,0 +1,11 @@
+#!/bin/sh
+mod_pac () {
+        #pacu=$(pacman -Qu | grep -Fcv "[ignored]" | sed "s/^//;s/^0$//g");
+	pacu=$(pacman -Qu | grep -Fcv "[ignored]" | sed "s/^//;s/^0$//g");
+	[ -z "$pacu" ] && pacu="0";
+	pre=""
+	[ "$pacu" -gt 10 ] && pre=""
+
+	printf "%s %s" "$pre" "$pacu"
+}
+
