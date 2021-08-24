@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# This loop will update the mpd statusbar module whenever a command changes the
+# music player's status. mpd must be running on X's start for this to work.
+pidof -x mpd >/dev/null 2>&1 || sleep 5s
+while : ; do
+	mpc idle >/dev/null && avds mpcd 
+done

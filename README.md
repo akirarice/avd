@@ -1,4 +1,4 @@
-akuma-v-dwm
+Akira's fork of akuma-v-dwm
 ===========
 
 akuma-v-dwm is a daemon that displays the status bar for window managers like
@@ -105,6 +105,14 @@ the module list parameter and include the name of your module in the
 list. For instance, if you wanted to have a status bar that consisited of
 your hypothetical weather-wttr module followed by the date/time, you would
 start the daemon like this: `avdd 'weather-wttr dt' &`.
+
+Modules added by Akira
+----------------------
+mpcd: tracks music changes via mpc idle
+pac:  tracks new package updates. Use a cron job to update db regularly
+mem: rewritten
+temp: rewritten
+vol-amixer: rewritten
 
 ### Reserved Module Names
 
